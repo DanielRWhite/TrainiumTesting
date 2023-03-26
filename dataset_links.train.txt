@@ -1,0 +1,5 @@
+https://facesyntheticspubwedata.blob.core.windows.net/wacv-2023/subjects_0-1999_72_imgs.zip
+https://facesyntheticspubwedata.blob.core.windows.net/wacv-2023/subjects_2000-3999_72_imgs.zip
+https://facesyntheticspubwedata.blob.core.windows.net/wacv-2023/subjects_4000-5999_72_imgs.zip
+https://facesyntheticspubwedata.blob.core.windows.net/wacv-2023/subjects_6000-7999_72_imgs.zip
+https://facesyntheticspubwedata.blob.core.windows.net/wacv-2023/subjects_8000-9999_72_imgs.zip
