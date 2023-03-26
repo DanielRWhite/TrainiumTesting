@@ -1,11 +1,10 @@
 import torch
 
-#from torchvision import transformers
 from dataset import DigiFaceDataset
 from pathlib import Path
 
-#import torchvision
-import timm
+import torchvision
+#import timm
 
 """
 XLA Stuff
@@ -50,13 +49,14 @@ def main():
         
         device = xm.xla_device()
         
-        model = timm.create_model('maxvit_rmlp_pico_rw_256.sw_in1k', pretrained = False, num_classes = 0)
+        #model = timm.create_model('maxvit_rmlp_pico_rw_256.sw_in1k', pretrained = False, num_classes = 0)
+        model = torchvision.models.efficient_net_v2_s(weights = None)
         model = model.to(device)
         
-        data_config = timm.data.resolve_model_data_config(model)
-        transforms = timm.data.create_transform(**data_config, is_training = False)
+        #data_config = timm.data.resolve_model_data_config(model)
+        #transforms = timm.data.create_transform(**data_config, is_training = False)
         
-        train_dataset = DigiFaceDataset(DATASET_DIR.joinpath(Path("train")), pre_transforms = transforms)
+        train_dataset = DigiFaceDataset(DATASET_DIR.joinpath(Path("train")), image_size = (384, 384), pre_transforms = None)
         train_sampler = None
         
         if xm.xrt_world_size() > 0:

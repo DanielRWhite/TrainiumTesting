@@ -22,7 +22,7 @@ def list_files(key, root_dir = None):
 
 class DigiFaceDataset(Dataset):
         
-        def __init__(self, root_dir, pre_transforms = None, **kwargs):
+        def __init__(self, root_dir, image_size, pre_transforms = None, **kwargs):
                 super(DigiFaceDataset, self).__init__(**kwargs)
                 
                 self.root_dir = Path(root_dir)
@@ -38,6 +38,7 @@ class DigiFaceDataset(Dataset):
                                 transforms.RandomAutocontrast(),
                                 transforms.RandomEqualize()
                         ], p = 0.5),
+                        transforms.Resize(image_size),
                         transforms.ToTensor()
                 ])
                 
