@@ -111,9 +111,6 @@ def main():
         
         return
 
-def _mp_fn(index):
+if __name__ == "__main__":
         torch.set_default_tensor_type(torch.FloatTensor)
         main()
-        
-if __name__ == "__main__":
-        xmp.spawn(_mp_fn, nprocs=2)
