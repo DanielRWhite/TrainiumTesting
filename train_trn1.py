@@ -112,7 +112,7 @@ def main():
         return
 
 def _mp_fn(index):
-        torch.set_default_tensor_type(torch.FullTensor)
+        torch.set_default_tensor_type(torch.FloatTensor)
         main()
         
 if __name__ == "__main__":
