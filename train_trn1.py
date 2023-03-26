@@ -50,7 +50,7 @@ def main():
         device = xm.xla_device()
         
         #model = timm.create_model('maxvit_rmlp_pico_rw_256.sw_in1k', pretrained = False, num_classes = 0)
-        model = torchvision.models.efficient_net_v2_s(weights = None)
+        model = torchvision.models.efficientnet_v2_s(weights = None)
         model = model.to(device)
         
         #data_config = timm.data.resolve_model_data_config(model)
