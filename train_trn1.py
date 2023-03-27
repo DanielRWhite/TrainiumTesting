@@ -56,7 +56,7 @@ def main():
         #data_config = timm.data.resolve_model_data_config(model)
         #transforms = timm.data.create_transform(**data_config, is_training = False)
         
-        train_dataset = DigiFaceDataset(DATASET_DIR.joinpath(Path("train")), image_size = (384, 384), pre_transforms = None)
+        
         train_sampler = None
         
         if xm.xrt_world_size() > 0:

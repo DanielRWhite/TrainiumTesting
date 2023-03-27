@@ -8,6 +8,9 @@ from pathlib import Path
 import torchvision
 import pytorch_lightning as pl
 import argparse
+
+from transformers import TrainingArguments
+from optimum.neuron import TrainiumTrainer as Trainer
 #import timm
 
 class LightningPipeline(pl.LightningModule):
