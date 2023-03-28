@@ -62,8 +62,8 @@ class DigiFaceDataset(Dataset):
                                 total = total + len(self.config[person])
                                 continue
                         
-                        index = (len(self.config[person]) + total) - idx - 1
-                        return person, index
+                index = (len(self.config[person]) + total) - idx - 1
+                return person, index
                 
         def preprocess(self, image):
                 return transforms.ToPILImage()(self.pre_transforms(image)) if self.pre_transforms is not None else image
